@@ -8,7 +8,7 @@
   "scripts": {
     "build": "webpack",
     "lint:ts": "tsc --noEmit",
-    "eslint": "eslint ./src --ext ts",
+    "eslint": "eslint ./js --ext ts,tsx",
     "test": "jest"
   },
   "devDependencies": {
