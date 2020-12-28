@@ -83,4 +83,15 @@ transform: {
 }
 ※ TypeScriptに設定した場合、関数の同名定義と型の未指定はちゃんとエラーとして報告される、素晴らしい。
 エラー１：Cannot redeclare block-scoped variable 'sum'.
-エラー２：
+エラー２：Parameter 'a' implicitly has an 'any' type.
+
+
+chap7
+１１．ESLintとPrettierの導入
+p171 誤植 eslit -> eslint
+yarn add -D eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier
+
+yarn eslint ./js --ext ts
+※ tsファイルだけに実行する、p174のコマンドはyarn抜けてる
+※ yarn eslint ./js --ext ts --fixコマンドで自動修復できる
+
