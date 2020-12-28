@@ -75,5 +75,12 @@ package.jsonからコマンドを確認できる
   "test": "jest"
 },
 
-
-
+１０．同名.test.tsのテストファイルを用意したらJestの単体テストもいけた
+※ jest.config.tsの実行transformを変えると、ts-jestを使ってTypeScriptの構文をチェックすることができる
+言い換えれば、それをコメントアウトすれば普通のjsのテストができる。改善提案にしょう！  
+transform: {
+    "^.+\\.ts$": "ts-jest"
+}
+※ TypeScriptに設定した場合、関数の同名定義と型の未指定はちゃんとエラーとして報告される、素晴らしい。
+エラー１：Cannot redeclare block-scoped variable 'sum'.
+エラー２：
