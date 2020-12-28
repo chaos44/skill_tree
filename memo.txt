@@ -95,3 +95,22 @@ yarn eslint ./js --ext ts
 ※ tsファイルだけに実行する、p174のコマンドはyarn抜けてる
 ※ yarn eslint ./js --ext ts --fixコマンドで自動修復できる
 
+１２．TypeScriptで色々とエラーに見舞われ、解決しにくいため、jsだけにする
+※ 
+"eslint": "eslint ./js --ext js",  (package.json)
+transform設定をコメントアウトする (jest.config.ts)
+
+１３．ESLintを使っている場合、テストファイル中のtestやexpectなどの記述がno-undefとしてエラーとなる場合がある
+yarn add eslint-plugin-jest
+.eslintrc に以下の設定を追加することで解決できる
+    env: {
+      browser: true,
+      es2020: true,
+      "jest/globals": true,
+      node: true
+    },
+    plugins: [
+      "jest"
+    ],
+参考リンク：https://qiita.com/hogesuke_1/items/8da7b63ff1d420b4253f#eslint%E3%81%AE%E5%AF%BE%E5%BF%9C (誤植あり、plugins)
+
