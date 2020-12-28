@@ -1,0 +1,79 @@
+12/28
+自動テスト導入手順（6-1)
+・個人開発に使えそうなパッケージのインストールと設定方法
+１．yarnの利用準備：
+リポジトリーのフォルダー内で実行
+yarn init -y
+※ package.jsonが追加される
+
+２．分割されたコードを一つまとめて配布しやすくするwebpack
+yarn add webpack webpack-cli --dev 
+※ node_modulesフォルダとyarn.lockが追加される
+
+３．webpackの設定ファイル、webpack.config.jsの作成
+※ entryを始点のjsファイルを指定する必要ある
+
+４．package.jsonにbuildコマンドを定義してyarn run buildを実行する
+※ エラー：
+Module not found: Error: Can't resolve 'babel-loader' in 'L:\practice\javascript\skill_tree'
+またbabelがインストールされてないからか
+
+５．babelのインストール
+※ webpack.config.jsの設定も変える必要がある p132
+※ yarn run buildで４のエラーなくなった。やつぱり
+※ エラーの理由分った、babelをインストールする前にwebpack.config.jsにbabelを使う設定を追加したからだ
+
+６．TypeScriptの導入
+yarn add typescript --dev
++ CLIの導入：
+yarn run tsc --init
+※ tsconfig.jsonが作成される
+
+７．babel経由でTypeScriptのコンパイルを行う
+yarn add @babel/preset-typescript --dev
+※ webpack.config.jsのrulesのtestを拡張子tsのファイルも対応できるように修正する
+こっそりjsファイルをtsに変える、entryの拡張子も忘れてはいけない
+
+８．実行コマンドをpackage.jsonに追加する p137
+yarn run lint:ts
+※ どこでeslintをインストールしたのかは分らないが、使えるようになってる
+※ 紹介はp89 
+※ 第7章の導入は git actionsへの導入かな
+
+９．Jestの導入
+yarn add jest @types/jest ts-jest --dev
+※ 初回導入時のメモ： テストツールjestの初期化時に聞かれた設定に関する質問の数が書籍よりも多くなってるので要注意 p142 適当に答えたけど、現時点影響なさそう。
+質問5(jpg参照)の意味は以下のリンクで確認できる。https://jestjs.io/docs/ja/cli#--coverageproviderprovider
+
+yarn run jest --init
+√ Would you like to use Jest when running "test" script in "package.json"? ... yes
+√ Would you like to use Typescript for the configuration file? ... yes
+√ Choose the test environment that will be used for testing » jsdom (browser-like)
+√ Do you want Jest to add coverage reports? ... no
+√ Which provider should be used to instrument code for coverage? » babel
+√ Automatically clear mock calls and instances between every test? ... yes
+※ jest.config.tsのできあがり
+
+最後jest.config.tsにts-jestの設定を追加する
+※ yarn run jestでエラーになる
+Error: Jest: Failed to parse the TypeScript config file L:\practice\javascript\skill_tree\jest.config.ts
+  Error: Jest: 'ts-node' is required for the TypeScript configuration files. Make sure it is installed
+Error: Cannot find module 'ts-node'
+※ yarn add ts-node実行したら、yarn run jestのエラーはなくなった！Yeah！完璧
+※ テスト書いてないため、No tests found, exiting with code 1と表示されるが、正常だと思う
+6章我流投入完了
+
+※ 
+yarn run build(webpack) -> webpack
+yarn run lint:ts -> lint:ts
+yarn run test(jest)
+
+package.jsonからコマンドを確認できる
+"scripts": {
+  "build": "webpack",
+  "lint:ts": "tsc --noEmit",
+  "test": "jest"
+},
+
+
+
