@@ -5,8 +5,2057 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Document</title>
     <script src='/dist/main.js' charset='utf-8'></script>
+    <link rel="stylesheet" type="text/css" href="./style/skill_tree.css">
 </head>
 <body>
-    <h1>skill_tree</h1>
+	<header class="cf">
+		<div id="set-class">
+			<div class="class" data-role="main-class">
+				<img src="./images/icon-main-class.png" alt="Main Class">
+	
+				<label for="class-set-main" class="class-set"><span class="class-title">1P</span>
+					<select name="class-set-main" id="class-set-main">
+							<option value="1">劉</option>
+							<option value="2">峯野</option>
+							<option value="3">Force</option>
+							<option value="4">Fighter</option>
+							<option value="5">Gunner</option>
+							<option value="6">Techter</option>
+							<option value="7">Braver</option>
+							<option value="8">Bouncer</option>
+							<option value="9">Summoner</option>
+							<option value="10">Hero</option>
+							<option value="11">Phantom</option>
+							<option value="12">Etoile</option>
+							<option value="13">Luster </option>
+					</select>
+				</label>
+	
+				<label for="class-lv-main" class="class-lv">達成率:
+					<input type="text" value="0" name="class-lv-main" id="class-lv-main" data-role="class-lv">
+				</label>
+
+				<input type="button" value="RESET" class="btn-reset" data-reset="tree-main">
+			</div>
+	
+			<div class="class" data-role="sub-class">
+				<img src="./images/icon-sub-class.png" alt="Sub Class">
+	
+				<label for="class-set-sub" class="class-set"><span class="class-title">2P</span>
+					<select name="class-set-sub" id="class-set-sub">
+						<option value="0">--</option>
+							<option value="1">劉</option>
+							<option value="2">峯野</option>
+							<option value="3">Force</option>
+							<option value="4">Fighter</option>
+							<option value="5">Gunner</option>
+							<option value="6">Techter</option>
+							<option value="7">Braver</option>
+							<option value="8">Bouncer</option>
+							<option value="9">Summoner</option>
+							<option value="10">Hero</option>
+							<option value="11">Phantom</option>
+							<option value="12">Etoile</option>
+							<option value="13">Luster </option>
+					</select>
+				</label>
+	
+				<label for="class-lv-sub" class="class-lv">達成率:
+					<input type="text" value="0" name="class-lv-sub" id="class-lv-sub" data-role="class-lv">
+				</label>
+	
+	
+				<input type="button" value="RESET" class="btn-reset" data-reset="tree-sub">
+			</div>
+		</div>
+	
+		<div id="set-sub">
+			<div id="utility">
+				<span id="utility-box">
+					<select name="save-slot" id="save-slot">
+	<option value="1">slot1</option><option value="2">slot2</option><option value="3">slot3</option><option value="4">slot4</option><option value="5">slot5</option><option value="6">slot6</option><option value="7">slot7</option><option value="8">slot8</option><option value="9">slot9</option><option value="10">slot10</option><option value="11">slot11</option><option value="12">slot12</option><option value="13">slot13</option><option value="14">slot14</option><option value="15">slot15</option><option value="16">slot16</option><option value="17">slot17</option><option value="18">slot18</option><option value="19">slot19</option><option value="20">slot20</option><option value="21">slot21</option><option value="22">slot22</option><option value="23">slot23</option><option value="24">slot24</option><option value="25">slot25</option><option value="26">slot26</option><option value="27">slot27</option><option value="28">slot28</option><option value="29">slot29</option><option value="30">slot30</option>				</select>
+					<input type="button" value="SAVE" id="btn-save">
+					<input type="button" value="LOAD" id="btn-load">
+				</span>
+			</div>
+	
+			<div id="config">
+				<label for="config-detail">詳細表示タイプ
+					マウスオーバー<input type="radio" name="detail-type" value="1" checked="checked">
+					画面下<input type="radio" name="detail-type" value="2">
+					無し<input type="radio" name="detail-type" value="0">
+					<input type="radio" name="detail-type" class="m-detail" value="9">
+				</label>
+			</div>
+		</div>
+	
+		<div id="tab">
+			<div id="tab-main" style="opacity: 1;"><img src="./images/icon-main-class.png" alt="main Class">劉</div>
+			<div id="tab-sub" style="opacity: 0.5;"><img src="./images/icon-sub-class.png" alt="sub Class">Select Name</div>
+		</div>
+	
+		
+	</header>
+	<div id="body" style="padding-top: 93px; height: 775px;">
+		<div class="skill-detail" style="display: none; top: 334px; left: 964px;">
+			<h2><img src="../images/skill/icon-skill-no.png" alt="skill icon">ファントムタイム</h2>
+			<p>最大ギアの半分を消費し、使用中ステップ無敵延長と消費PP軽減。開始時、無敵時間が発生する。習得時ファントムギアも習得。このスキルはメインクラスのみ適用される</p>
+			<table>
+				<thead>
+				<tr><th>レベル</th><th>Lv1</th></tr>
+			</thead>
+			<tbody>
+				<tr><th>効果時間</th><td>20秒</td></tr>
+				<tr><th>無敵延長</th><td>0.50秒</td></tr>
+				<tr><th>PP消費率</th><td>80%</td></tr>
+				<tr><th>無敵時間</th><td>5秒</td></tr>
+				<tr></tr>
+			</tbody>
+			</table>
+		</div>
+		<article id="tree-main" data-role="tree" style="display: block;">
+			<div class="undo">
+				<img src="../images/btn-undo.png" alt="UNDO" class="btn-undo">
+				<span class="log"></span>
+			</div>
+			<div class="photo">
+				<img src="../images/btn-photo.png" class="btn-photo">
+			</div>
+			<div class="skill r1 c1" data-id="471" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="./images/skill/js.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">JavaScript</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r1 c2" data-id="472" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r1 c3" data-id="473" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-227.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">2</span>
+				</div>
+			</div>
+			<div class="skill r1 c4" data-id="474" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">3</span>
+				</div>
+			</div>
+			<div class="skill r1 c5" data-id="475" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">4</span>
+				</div>
+			</div>
+			<div class="skill r1 c6" data-id="476" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">5</span>
+				</div>
+			</div>
+			<div class="skill r2 c1" data-id="471" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="./images/skill/ml.jpg" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">機械学習</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r2 c2" data-id="472" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>画像処理</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r2 c3" data-id="473" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-227.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>自然言語処理</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">2</span>
+				</div>
+			</div>
+			<div class="skill r2 c4" data-id="474" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">3</span>
+				</div>
+			</div>
+			<div class="skill r2 c5" data-id="475" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">4</span>
+				</div>
+			</div>
+			<div class="skill r2 c6" data-id="476" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">5</span>
+				</div>
+			</div>
+			<div class="skill r3 c1" data-id="471" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="./images/skill/db_2.jpg" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">データベース</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c2" data-id="472" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c3" data-id="473" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-227.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">2</span>
+				</div>
+			</div>
+			<div class="skill r3 c4" data-id="474" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">3</span>
+				</div>
+			</div>
+			<div class="skill r3 c5" data-id="475" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">4</span>
+				</div>
+			</div>
+			<div class="skill r3 c6" data-id="476" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">5</span>
+				</div>
+			</div>
+			<div class="skill r4 c1" data-id="471" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="./images/skill/ros2.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ロボット</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c2" data-id="472" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r4 c3" data-id="473" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-227.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">2</span>
+				</div>
+			</div>
+			<div class="skill r4 c4" data-id="474" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">3</span>
+				</div>
+			</div>
+			<div class="skill r4 c5" data-id="475" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">4</span>
+				</div>
+			</div>
+			<div class="skill r4 c6" data-id="476" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill icon" class="skill-img" width="28" height="28">
+				<h2>未定</h2>
+				<span class="skill-lv-def" style="color:#487ff0;"></span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">5</span>
+				</div>
+			</div>
+<!--  
+			<div class="skill r2 c1" data-id="477" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-267.png" alt="skill ゲシュペンスト" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ゲシュペンスト</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r2 c2" data-id="478" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-205.png" alt="skill ハイレベル
+	ボーナスPh" class="skill-img" width="28" height="28">
+				<h2>ハイレベル<br>
+	ボーナスPh</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r2 c3" data-id="479" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップJAコンボ" class="skill-img" width="28" height="28">
+				<h2>ステップ<br>JAコンボ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c2" data-id="480" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-268.png" alt="skill スプリント
+	テックチャージ" class="skill-img" width="28" height="28">
+				<h2>スプリント<br>
+	テックチャージ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c3" data-id="481" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-269.png" alt="skill ステルス
+	テックチャージ" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ステルス<br>
+	テックチャージ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c4" data-id="482" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-270.png" alt="skill ファントムタリス
+	Sチャージ" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ファントムタリス<br>
+	Sチャージ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c5" data-id="483" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-271.png" alt="skill ファントムマグ" class="skill-img" width="28" height="28">
+				<h2>ファントムマグ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c6" data-id="484" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-272.png" alt="skill ファントム
+	ステップ" class="skill-img" width="28" height="28">
+				<h2>ファントム<br>
+	ステップ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r4 c6" data-id="485" data-req-skill="484" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップロール
+	アドバンス" class="skill-img" width="28" height="28">
+				<h2>ステップロール<br>
+	アドバンス</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r4 c2" data-id="486" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-273.png" alt="skill ドッジカウンター
+	ショット" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ドッジカウンター<br>
+	ショット</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+
+			<div class="skill r5 c2" data-id="487" data-req-skill="486" data-req-lv="2" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">2</div>			<img src="../images/skill/icon-skill-287.png" alt="skill ドッジ
+	PPゲイン" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ドッジ<br>
+	PPゲイン</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c3" data-id="488" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-274.png" alt="skill ファントムタイム" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ファントムタイム</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c3" data-id="489" data-req-skill="488" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-288.png" alt="skill ファントムタイム
+	フィニッシュ" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ファントムタイム<br>
+	フィニッシュ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r6 c3" data-id="490" data-req-skill="489" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-278.png" alt="skill ファントムタイム
+	マークブースト" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ファントムタイム<br>
+	マークブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r6 c4" data-id="491" data-req-skill="489" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-279.png" alt="skill ファントムタイム
+	ジェルンプラス" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ファントムタイム<br>
+	ジェルンプラス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c4" data-id="492" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-275.png" alt="skill アタック
+	ジェルン" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">アタック<br>
+	ジェルン</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c4" data-id="493" data-req-skill="492" data-req-lv="2" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">2</div>			<img src="../images/skill/icon-skill-289.png" alt="skill ジェルン
+	リドレス" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ジェルン<br>
+	リドレス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c5" data-id="494" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-276.png" alt="skill Phウェポン
+	ボーナス1" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">Phウェポン<br>
+	ボーナス1</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c5" data-id="495" data-req-skill="494" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-276.png" alt="skill Phウェポン
+	ボーナス2" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">Phウェポン<br>
+	ボーナス2</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c6" data-id="496" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップアタック" class="skill-img" width="28" height="28">
+				<h2>ステップアタック</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r6 c6" data-id="497" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ジャストリバーサル" class="skill-img" width="28" height="28">
+				<h2>ジャストリバーサル</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r7 c6" data-id="498" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-284.png" alt="skill テックチャージ
+	JAアディション" class="skill-img" width="28" height="28">
+				<h2>テックチャージ<br>
+	JAアディション</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c2" data-id="499" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-280.png" alt="skill ゼロレンジマーク
+	ブースト" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ゼロレンジマーク<br>
+	ブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c3" data-id="500" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-281.png" alt="skill ロングレンジマーク
+	ブースト" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ロングレンジマーク<br>
+	ブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c4" data-id="501" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-282.png" alt="skill チェイスマーク
+	ブースト" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">チェイスマーク<br>
+	ブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c5" data-id="502" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-283.png" alt="skill ロードオブ
+	ソーン" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ロードオブ<br>
+	ソーン</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c1" data-id="503" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-285.png" alt="skill マーク
+	PPドレイン" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">マーク<br>
+	PPドレイン</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c2" data-id="504" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-290.png" alt="skill マークヒール" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">マークヒール</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c3" data-id="505" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-286.png" alt="skill クイックカット" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">クイックカット</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c4" data-id="506" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-277.png" alt="skill ブルズアイ" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">ブルズアイ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c5" data-id="507" data-req-skill="471" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-297.png" alt="skill アンビバレンス" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">アンビバレンス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c1" data-id="508" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-291.png" alt="skill オールアタック
+	ボーナスPh" class="skill-img" width="28" height="28">
+				<h2>オールアタック<br>
+	ボーナスPh</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c1" data-id="509" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-295.png" alt="skill フルドライブ" class="skill-img" width="28" height="28">
+				<h2>フルドライブ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c2" data-id="510" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-292.png" alt="skill フォトン
+	ストリーム" class="skill-img" width="28" height="28">
+				<h2>フォトン<br>
+	ストリーム</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c2" data-id="511" data-req-skill="510" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-296.png" alt="skill クリティカル
+	ストリーム" class="skill-img" width="28" height="28">
+				<h2>クリティカル<br>
+	ストリーム</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c3" data-id="512" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-293.png" alt="skill ファントム
+	PPリストレイト" class="skill-img" width="28" height="28">
+				<h2>ファントム<br>
+	PPリストレイト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c3" data-id="513" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-2.png" alt="skill PPハイアップ" class="skill-img" width="28" height="28">
+				<h2>PPハイアップ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c4" data-id="514" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-294.png" alt="skill テックショート
+	チャージ" class="skill-img" width="28" height="28">
+				<h2>テックショート<br>
+	チャージ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+	<canvas width="960" height="735"></canvas></article>
+		<article id="tree-sub" data-role="tree" style="display: none;">		<div class="undo">
+				<img src="../images/btn-undo.png" alt="UNDO" class="btn-undo">
+				<span class="log">3Su.11*0,</span>
+			</div>
+			<div class="photo">
+				<img src="../images/btn-photo.png" class="btn-photo">
+			</div>
+			<div class="skill r1 c1" data-id="149" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; opacity: 1;" data-opacity="on">
+				<img src="../images/skill/icon-skill-3.png" alt="skill 打撃アップ1" class="skill-img" width="28" height="28">
+				<h2>打撃アップ1</h2>
+				<input type="text" value="0" class="skill-lv" style="">
+				<div class="lv-select">
+						<button value="0" style="">0</button>
+						<button value="1" style="">1</button>
+						<button value="2" style="">2</button>
+						<button value="3" style="">3</button>
+						<button value="4" style="">4</button>
+						<button value="5" style="">5</button>
+						<button value="6" style="">6</button>
+						<button value="7" style="">7</button>
+						<button value="8" style="">8</button>
+						<button value="9" style="">9</button>
+						<button value="10" style="">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c2" data-id="150" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-6.png" alt="skill 技量アップ1" class="skill-img" width="28" height="28">
+				<h2>技量アップ1</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c3" data-id="151" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-1.png" alt="skill HPアップ1" class="skill-img" width="28" height="28">
+				<h2>HPアップ1</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c4" data-id="152" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-53.png" alt="skill レアマスタリー
+	ファイター" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">レアマスタリー<br>
+	ファイター</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r3 c5" data-id="153" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-7.png" alt="skill 打撃防御アップ1" class="skill-img" width="28" height="28">
+				<h2>打撃防御アップ1</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r3 c6" data-id="154" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-47.png" alt="skill ステップ" class="skill-img" width="28" height="28">
+				<h2>ステップ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r4 c6" data-id="155" data-req-skill="154" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップアドバンス" class="skill-img" width="28" height="28">
+				<h2>ステップアドバンス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c2" data-id="156" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-3.png" alt="skill 打撃アップ2" class="skill-img" width="28" height="28">
+				<h2>打撃アップ2</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r4 c3" data-id="157" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-1.png" alt="skill HPアップ2" class="skill-img" width="28" height="28">
+				<h2>HPアップ2</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c2" data-id="158" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-3.png" alt="skill 打撃アップ3" class="skill-img" width="28" height="28">
+				<h2>打撃アップ3</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c4" data-id="159" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-3.png" alt="skill クリティカル
+	ストライク" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">クリティカル<br>
+	ストライク</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r5 c5" data-id="160" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ジャスト
+	リバーサル" class="skill-img" width="28" height="28">
+				<h2>ジャスト<br>
+	リバーサル</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r5 c6" data-id="161" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップアタック" class="skill-img" width="28" height="28">
+				<h2>ステップアタック</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r6 c2" data-id="162" data-req-skill="149" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-19.png" alt="skill ダブルセイバー
+	ギア" class="skill-img" width="28" height="28">
+				<h2>ダブルセイバー<br>
+	ギア</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r6 c3" data-id="163" data-req-skill="149" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-82.png" alt="skill ツインダガー
+	ギア" class="skill-img" width="28" height="28">
+				<h2>ツインダガー<br>
+	ギア</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r6 c4" data-id="164" data-req-skill="149" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-54.png" alt="skill ナックル
+	ギア" class="skill-img" width="28" height="28">
+				<h2>ナックル<br>
+	ギア</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c2" data-id="165" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-21.png" alt="skill ブレイブ
+	スタンス" class="skill-img" width="28" height="28">
+				<h2>ブレイブ<br>
+	スタンス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c4" data-id="166" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-22.png" alt="skill ワイズ
+	スタンス" class="skill-img" width="28" height="28">
+				<h2>ワイズ<br>
+	スタンス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c5" data-id="167" data-req-skill="149" data-req-lv="2" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">2</div>			<img src="../images/skill/icon-skill-97.png" alt="skill アドレナリン" class="skill-img" width="28" height="28">
+				<h2>アドレナリン</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r8 c6" data-id="168" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-162.png" alt="skill テックアーツ
+	JAボーナス" class="skill-img" width="28" height="28">
+				<h2>テックアーツ<br>
+	JAボーナス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c2" data-id="169" data-req-skill="165" data-req-lv="5" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">5</div>			<img src="../images/skill/icon-skill-23.png" alt="skill ブレイブ
+	Sアップ" class="skill-img" width="28" height="28">
+				<h2>ブレイブ<br>
+	Sアップ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c3" data-id="170" data-req-skill="165" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-23.png" alt="skill ブレイブ
+	クリティカル" class="skill-img" width="28" height="28">
+				<h2>ブレイブ<br>
+	クリティカル</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c4" data-id="171" data-req-skill="166" data-req-lv="5" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">5</div>			<img src="../images/skill/icon-skill-24.png" alt="skill ワイズスタンス
+	アップ" class="skill-img" width="28" height="28">
+				<h2>ワイズスタンス<br>
+	アップ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c5" data-id="172" data-req-skill="166" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-24.png" alt="skill ワイズスタンス
+	クリティカル" class="skill-img" width="28" height="28">
+				<h2>ワイズスタンス<br>
+	クリティカル</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c1" data-id="173" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-25.png" alt="skill チェイス
+	アドバンス" class="skill-img" width="28" height="28">
+				<h2>チェイス<br>
+	アドバンス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c2" data-id="174" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-116.png" alt="skill ハーフライン
+	ブースト" class="skill-img" width="28" height="28">
+				<h2>ハーフライン<br>
+	ブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c3" data-id="175" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-27.png" alt="skill デッドライン
+	スレイヤー" class="skill-img" width="28" height="28">
+				<h2>デッドライン<br>
+	スレイヤー</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c4" data-id="176" data-req-skill="149" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-27.png" alt="skill ハーフライン
+	スレイヤー" class="skill-img" width="28" height="28">
+				<h2>ハーフライン<br>
+	スレイヤー</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r10 c6" data-id="177" data-req-skill="149" data-req-lv="5" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">5</div>			<img src="../images/skill/icon-skill-170.png" alt="skill リミットブレイク" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">リミットブレイク</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c1" data-id="178" data-req-skill="173" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-25.png" alt="skill チェイス
+	アドバンスプラス" class="skill-img" width="28" height="28">
+				<h2>チェイス<br>
+	アドバンスプラス</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c2" data-id="179" data-req-skill="173" data-req-lv="5" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">5</div>			<img src="../images/skill/icon-skill-26.png" alt="skill チェイス
+	バインド" class="skill-img" width="28" height="28">
+				<h2>チェイス<br>
+	バインド</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c3" data-id="180" data-req-skill="175" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-28.png" alt="skill PPスレイヤー" class="skill-img" width="28" height="28">
+				<h2>PPスレイヤー</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">5</button>
+						<button value="6">6</button>
+						<button value="7">7</button>
+						<button value="8">8</button>
+						<button value="9">9</button>
+						<button value="10">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c4" data-id="181" data-req-skill="176" data-req-lv="2" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">2</div>			<img src="../images/skill/icon-skill-117.png" alt="skill クレイジーハート" class="skill-img" width="28" height="28">
+				<h2>クレイジーハート</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c5" data-id="182" data-req-skill="176" data-req-lv="4" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">4</div>			<img src="../images/skill/icon-skill-118.png" alt="skill クレイジービート" class="skill-img" width="28" height="28">
+				<h2>クレイジービート</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c2" data-id="296" data-req-skill="162" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-178.png" alt="skill Dセイバー
+	ウィンドパリング" class="skill-img" width="28" height="28">
+				<h2>Dセイバー<br>
+	ウィンドパリング</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c3" data-id="297" data-req-skill="163" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-179.png" alt="skill Tダガー
+	スピンムーブ" class="skill-img" width="28" height="28">
+				<h2>Tダガー<br>
+	スピンムーブ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r7 c4" data-id="298" data-req-skill="164" data-req-lv="1" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">1</div>			<img src="../images/skill/icon-skill-180.png" alt="skill ナックルギア
+	ブースト" class="skill-img" width="28" height="28">
+				<h2>ナックルギア<br>
+	ブースト</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r11 c6" data-id="307" data-req-skill="177" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-181.png" alt="skill リミットブレイク
+	フォトンチャージ" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">リミットブレイク<br>
+	フォトンチャージ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">M</option>
+				</select>
+			</div>
+			<div class="skill r9 c6" data-id="348" data-req-skill="168" data-req-lv="3" style="opacity: 0.3; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="off">
+	<div class="req"><img src="../images/icon-lock.png" alt="require">3</div>			<img src="../images/skill/icon-skill-195.png" alt="skill テックアーツ
+	JAPPセイブ" class="skill-img" width="28" height="28">
+				<h2>テックアーツ<br>
+	JAPPセイブ</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r2 c2" data-id="399" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-260.png" alt="skill リミットブレイク
+	インシュランス" class="skill-img" width="28" height="28">
+				<h2 style="color:#cf0b43;">リミットブレイク<br>
+	インシュランス</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r2 c3" data-id="400" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" data-opacity="on">
+				<img src="../images/skill/icon-skill-205.png" alt="skill ハイレベル
+	ボーナスFi" class="skill-img" width="28" height="28">
+				<h2>ハイレベル<br>
+	ボーナスFi</h2>
+				<input type="text" value="0" class="skill-lv">
+				<div class="lv-select">
+						<button value="0">0</button>
+						<button value="1">1</button>
+						<button value="2">2</button>
+						<button value="3">3</button>
+						<button value="4">4</button>
+						<button value="5">M</button>
+				</div>
+				<select class="lv-select-m">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">M</option>
+				</select>
+			</div>
+			<div class="skill r1 c2" data-id="434" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップ
+	ジャンプ" class="skill-img" width="28" height="28">
+				<h2>ステップ<br>
+	ジャンプ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r1 c3" data-id="435" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-253.png" alt="skill ファーストアーツ
+	JAアディション" class="skill-img" width="28" height="28">
+				<h2>ファーストアーツ<br>
+	JAアディション</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r1 c6" data-id="436" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill ネクストジャンプ" class="skill-img" width="28" height="28">
+				<h2>ネクストジャンプ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r2 c6" data-id="437" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-52.png" alt="skill ステップ
+	JAコンボ" class="skill-img" width="28" height="28">
+				<h2>ステップ<br>
+	JAコンボ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r1 c4" data-id="438" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill エア
+	リバーサル" class="skill-img" width="28" height="28">
+				<h2>エア<br>
+	リバーサル</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			<div class="skill r1 c5" data-id="439" style="background:#bfdcff;" data-opacity="on">
+				<img src="../images/skill/icon-skill-251.png" alt="skill Jリバーサル
+	JAコンボ" class="skill-img" width="28" height="28">
+				<h2>Jリバーサル<br>
+	JAコンボ</h2>
+				<span class="skill-lv-def" style="color:#487ff0;">1</span>
+				<div class="lv-select">
+						<span style="color:#fff;background:#487ff0;">1</span>
+				</div>
+			</div>
+			-->
+	<canvas width="960" height="810"></canvas></article>
+	</div>
 </body>
 </html>
