@@ -1,7 +1,7 @@
 const http = require('http');
 
 function start(){
-  const html = require('fs').readFileSync('src/index.html')
+  const html = require('fs').readFileSync('../index.html')
   const server = http.createServer(function(request,response){
     response.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});
     process.on('uncaughtException', (e) => console.log(e));
